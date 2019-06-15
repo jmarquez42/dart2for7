@@ -3,15 +3,9 @@
 import 'package:Playground/animals.dart';
 
 main() {
+  var mamma = new Mammal(true, true);
+  var bat = new Bat();
 
-  var someAnimal = new Animal("Elephant", 4 , false);
-
-  print(someAnimal.name + "\n" + someAnimal.numberOfLegs.toString());
-
-  var someMammal  = new Mammal("Dog", 4, false);
-  print(someMammal.name + "\n" + someMammal.numberOfLegs.toString());
-
-  someAnimal.eat();
-  someMammal.eat();
-
+  mamma.breastfeed();
+  bat.breastfeed();
 }

@@ -1,26 +1,50 @@
 
-class Animal {
-
-  String name;
-  int numberOfLegs;
-  bool canFly;
-
-  Animal(this.name, this.numberOfLegs, this.canFly);
-
-  void eat(){
-    print("this animal eats food");
-  }
-
+abstract class Animal {
+  bool vertebrate;
+  void eat();
 }
 
-class Mammal extends Animal {
+class AirAnimal{
+  void livesInAir(){
+    print("This animal lives in the air");
+  }
+}
 
-  Mammal(String name, int numberOfLegs, bool canFly) : super(name, numberOfLegs, canFly);
+class Mammal{
+  bool coveredInFur;
+  bool hasHair;
+
+  Mammal(this.coveredInFur, this.hasHair);
+
+  void breastfeed(){
+    print("This animal breastfeeds!");
+  }
+}
+
+class Bat implements Mammal, AirAnimal, Animal{
+  @override
+  bool coveredInFur;
+
+  @override
+  bool hasHair;
+
+  @override
+  bool vertebrate;
+
+  @override
+  void breastfeed() {
+    // TODO: implement breastfeed
+    print("Test");
+  }
+
   @override
   void eat() {
     // TODO: implement eat
-    //super.eat();
-    print("Dogs eat meat");
+  }
+
+  @override
+  void livesInAir() {
+    // TODO: implement livesInAir
   }
 
 }
